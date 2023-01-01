@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details</title>
+    <!-- {% load static %} -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    {% load static %}
+    <form method="POST" action="/update/{{ employee.id }}">
+          <div>
+            <br>
+            <p>Update Details</p>
+        </div>
+
+          <div>
+                <p>User Id:</p>
+           <div>
+                <input type = 'text' name ='eid' value="{{employee.eid}}">
+          </div>
+              </div> 
+              
+              <div>
+                <p>First Name:</p>
+           <div>
+                <input type = 'text' name ='first_name' value="{{user.first_name}}">
+          </div>
+              </div> 
+
+              <div>
+                <p>Last Name:</p>
+           <div>
+                <input type = 'text' name ='last_name' value="{{user.last_name}}">
+          </div>
+              </div>
+
+              <div>
+                <p>Email:</p>
+           <div>
+                <input type = 'text' name ='email' value="{{user.email}}">
+          </div>
+              </div> 
+
+              <div>
+                <p>Password:</p>
+           <div>
+                <input type = 'text' name ='password' value="{{user.password}">
+          </div>
+              </div> 
+
+              <div>
+                <br>
+                <button type = 'submit' >Update</button>
+              </div>
+
+    </form>
+    {% csrf_token %}
+    
+</body>
+</html>

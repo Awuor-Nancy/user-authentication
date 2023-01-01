@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Eployee</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+    <form Method = 'POST' action = '/emp'>
+        {% csrf_token %}
+        <div>
+            <p>
+                <h3>Enter Details</h3>
+            </p>
+
+            <div>
+                <p>First Name</p>{{ form.first_name }}
+            </div>
+
+            <div>
+                <p>Last Name</p>{{ form.last_name }}
+            </div>
+
+            <div>
+                <p>User Email</p>{{ form.email }}
+            </div>
+
+            <div>
+                <p>User Password</p>{{ form.password }}
+            </div>
+              <br>
+            <div>
+                <button type ="submit" >Submit</button>
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+</html>

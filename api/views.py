@@ -40,11 +40,11 @@ def user(request):
 
 def show(request):
     user1 = User.objects.all()
-    return render(request, 'show.html', {'employees': user1})
+    return render(request, 'show.html', {'user1': user1})
 
 def edit(request, id):
     user2 = User.objects.get(id = id) 
-    return render(request, 'edit.html', {'employee': user2})
+    return render(request, 'edit.html', {'user2': user2})
 
 def update(request, id):
     user3 = User.objects.get(id = id)
@@ -52,7 +52,7 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect('/show')
-    return render(request, 'edit.html', {'emp':user3})  
+    return render(request, 'edit.html', {'user3':user3})  
     
 def delete(request, id):
     user4 = User.objects.get(id = id)
